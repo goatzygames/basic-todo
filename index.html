@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro To-Do App — Local</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">✅ Pro To-Do</div>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search tasks or tags..." aria-label="Search tasks">
+        <button id="toggleTheme" title="Toggle dark / light">🌙</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar" aria-label="Sidebar controls">
+        <section class="create">
+          <h2>Create task</h2>
+          <form id="taskForm" class="task-form" autocomplete="off">
+            <label>
+              Title
+              <input id="title" name="title" required maxlength="200" placeholder="Task title">
+            </label>
+
+            <label>
+              Notes
+              <textarea id="notes" name="notes" rows="2" placeholder="Optional details"></textarea>
+            </label>
+
+            <label class="inline">
+              Due
+              <input id="due" name="due" type="datetime-local">
+            </label>
+
+            <label class="inline">
+              Priority
+              <select id="priority" name="priority" >
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <label>
+              Tags (comma separated)
+              <input id="tags" name="tags" placeholder="work,errand,home">
+            </label>
+
+            <label>
+              Recurring
+              <select id="recurring" name="recurring">
+                <option value="">None</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </label>
+
+            <div class="form-actions">
+              <button id="saveTask" type="submit">Add task</button>
+              <button id="clearForm" type="button" class="secondary">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="filters">
+          <h3>Filters & Views</h3>
+
+          <div class="filter-row">
+            <label><input type="checkbox" id="showCompleted"> Show completed</label>
+            <label><input type="checkbox" id="showArchived"> Show archived</label>
+          </div>
+
+          <div class="filter-row">
+            <button data-view="all" class="view-btn active">All</button>
+            <button data-view="today" class="view-btn">Today</button>
+            <button data-view="overdue" class="view-btn">Overdue</button>
+            <button data-view="due7" class="view-btn">Due <7d</button>
+          </div>
+
+          <h4>Sort</h4>
+          <select id="sortBy" aria-label="Sort tasks">
+            <option value="order">Custom order</option>
+            <option value="due">Due date ↑</option>
+            <option value="due_desc">Due date ↓</option>
+            <option value="priority">Priority (high → low)</option>
+            <option value="created">Created (new → old)</option>
+          </select>
+
+          <h4>Bulk actions</h4>
+          <div class="bulk">
+            <button id="selectAll">Select all</button>
+            <button id="clearCompleted">Clear completed</button>
+            <button id="archiveCompleted">Archive completed</button>
+            <button id="deleteSelected" class="danger">Delete selected</button>
+            <button id="undo" title="Undo last change">Undo</button>
+          </div>
+
+          <h4>Data</h4>
+          <div class="data-actions">
+            <button id="exportJson">Export JSON</button>
+            <label class="import-label">
+              Import
+              <input id="importJson" type="file" accept="application/json">
+            </label>
+            <button id="resetAll" class="danger">Reset All</button>
+          </div>
+
+          <div class="stats" aria-live="polite">
+            <h4>Stats</h4>
+            <div id="statsContent">Loading…</div>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content" aria-label="Tasks">
+        <header class="list-top">
+          <h2 id="listTitle">Tasks</h2>
+          <div class="list-meta">
+            <span id="countActive">0 active</span> · <span id="countTotal">0 total</span>
+          </div>
+        </header>
+
+        <ul id="taskList" class="task-list" role="list" aria-label="Task list">
+          <!-- Tasks rendered here -->
+        </ul>
+
+        <footer class="content-footer">
+          <small>Tip: Use keyboard — Enter to add, / to focus search, Esc to close edit.</small>
+        </footer>
+      </section>
+    </main>
+
+    <!-- Edit modal (inline simple) -->
+    <div id="editModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <button id="closeModal" class="close">✖</button>
+        <h3>Edit task</h3>
+        <form id="editForm" class="task-form" autocomplete="off">
+          <input id="editId" type="hidden">
+          <label>
+            Title
+            <input id="editTitle" required maxlength="200">
+          </label>
+          <label>
+            Notes
+            <textarea id="editNotes" rows="3"></textarea>
+          </label>
+          <label class="inline">
+            Due
+            <input id="editDue" type="datetime-local">
+          </label>
+          <label class="inline">
+            Priority
+            <select id="editPriority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+          <label>
+            Tags
+            <input id="editTags" placeholder="comma separated">
+          </label>
+          <label>
+            Recurring
+            <select id="editRecurring">
+              <option value="">None</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </label>
+          <div class="form-actions">
+            <button id="saveEdit" type="submit">Save</button>
+            <button id="deleteTask" type="button" class="danger">Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
