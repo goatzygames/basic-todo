@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RagsDevRealm</title>
+  <meta name="title" content="Rags Dev Realm">
+  <meta name="description" content="Rag — Indie Game Developer sharing Unreal Engine 5 projects, devlogs, and insights. Follow the journey of solo game development.">
+
+  <!-- SEO keywords -->
+  <meta name="keywords" content="indie game developer, Unreal Engine 5, C++, game dev blog, solo dev, Rag Dev Realm, Ghostlab Studios, devlogs, portfolio">
+
+  <!-- Author -->
+  <meta name="author" content="Rag (Rag Dev Realm)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ragsdevrealm.com/">
+  <meta property="og:title" content="Rag Dev Realm — Portfolio">
+  <meta property="og:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta property="og:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ragsdevrealm.com/">
+  <meta name="twitter:title" content="Rag Dev Realm — Portfolio">
+  <meta name="twitter:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta name="twitter:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="pics/rdr_logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="pics/rdr_logo.png">
+  <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="pics/rdr_logo.png" />
+</head>
+<body>
+<!-- reuse header via copy/paste for static bundle -->
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="logo-round" aria-hidden>
+<img src="pics/rdr_logo.png" alt="RDR logo"/>
+</div>
+<div class="brand-text">
+<h1>Rags Dev Realm</h1>
+<p class="muted">Rag — Indie Game Developer · Unreal Engine 5</p>
+</div>
+</a>
+
+
+<nav class="main-nav" aria-label="Main navigation">
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+<a href="https://vgen.co/yanesari/portfolio">Yanisari's Art Corner</a>
+</nav>
+
+
+<button id="nav-toggle" class="nav-toggle" aria-label="Open menu">☰</button>
+</div>
+</header>
+<br><br><br><br>
+
+<main class="container about-page">
+<section class="about-intro">
+<h2>About Rag</h2>
+<p>I’ve been a gamer for as long as I can remember. Over the past two years I went all-in on indie development: learning Unreal Engine, experimenting with level design, and shipping two indie titles. My focus is to craft compelling, atmospheric experiences that reward curiosity.</p>
+</section>
+
+
+<section class="timeline">
+<h3>Experience</h3>
+<ul>
+<li><strong>2023–2025</strong> — Self-taught UE5 developer, shipped two indie games.</li>
+<li><strong>Tools</strong> — Unreal Engine 5, C++, Blueprints, Git, FMOD/WWise (audio), Blender (basic).</li>
+<li><strong>Future</strong> — Founding Ghostlab Studios and growing a small indie team.</li>
+</ul>
+</section>
+
+
+<section class="values">
+<h3>Design Philosophy</h3>
+<p>Games should feel like places you want to return to. I design around player curiosity, atmosphere, and emergent moments. Technical polish matters — but so does heart.</p>
+</section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-inner" style="justify-content: center;">
+    <div>© <span id="year"></span> Rag Dev Realm — Built with Unreal Engine 5 &amp; caffeine.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="main.js"></script>
+</body>
+</html>

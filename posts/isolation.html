@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RagsDevRealm</title>
+  <meta name="title" content="Rags Dev Realm">
+  <meta name="description" content="Rag — Indie Game Developer sharing Unreal Engine 5 projects, devlogs, and insights. Follow the journey of solo game development.">
+
+  <!-- SEO keywords -->
+  <meta name="keywords" content="indie game developer, Unreal Engine 5, C++, game dev blog, solo dev, Rag Dev Realm, Ghostlab Studios, devlogs, portfolio">
+
+  <!-- Author -->
+  <meta name="author" content="Rag (Rag Dev Realm)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ragsdevrealm.com/">
+  <meta property="og:title" content="Rag Dev Realm — Portfolio">
+  <meta property="og:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta property="og:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ragsdevrealm.com/">
+  <meta name="twitter:title" content="Rag Dev Realm — Portfolio">
+  <meta name="twitter:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta name="twitter:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="pics/rdr_logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="pics/rdr_logo.png">
+  <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../pics/rdr_logo.png" />
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="logo-round" aria-hidden>
+<img src="../pics/rdr_logo.png" alt="RDR logo"/>
+</div>
+<div class="brand-text">
+<h1>Rags Dev Realm</h1>
+<p class="muted">Rag — Indie Game Developer · Unreal Engine 5</p>
+</div>
+</a>
+
+
+<nav class="main-nav" aria-label="Main navigation">
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+<a href="https://vgen.co/yanesari/portfolio">Yanisari's Art Corner</a>
+</nav>
+
+
+<button id="nav-toggle" class="nav-toggle" aria-label="Open menu">☰</button>
+</div>
+</header>
+<br><br>
+<main class="container" style="padding-top:100px; max-width:800px;">
+  <article class="post">
+
+    <!-- Post Header Card -->
+    <div class="post-card">
+      <h1 style="font-size: 2.5rem;">Isolation Game Update</h1>
+      <p class="muted">Published on <time datetime="2025-09-21">September 27, 2025</time> · by Rag</p>
+      <div class="post-image">
+  <img id="switcher-img" src="../pics/Skarmbild_2025-09-25_210819.png" alt="Post cover">
+  <div class="switcher-controls">
+    <button onclick="prevImage()">←</button>
+    <button onclick="nextImage()">→</button>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Section Card -->
+    <div class="post-card">
+      <h2>Update</h2>
+      <p>
+        After a long modelling session it was time to import the animals to the project and give them animations, behaivor and personalit
+	  </p>
+    </div>
+	
+	    <!-- Section Card -->
+    <div class="post-card">
+      <h2>About</h2>
+      <p>
+        The game is a survival game where you have to shoot at different dinosaurs, like you see on the picture
+      </p>
+    </div>
+	
+
+    <!-- Quote / Highlight -->
+    <div class="post-card highlight" style="display:none;>
+      <blockquote>
+        
+      </blockquote>
+    </div>
+
+    <!-- Section Card with Image -->
+    <div class="post-card">
+      <h2>Technical Notes</h2>
+      <p>Break your content into sections with headings. This makes long posts easier to read.</p>
+      <img src="../pics/post2.jpg" alt="Gameplay capture">
+    </div>
+
+    <!-- Code Example Card -->
+    <div class="post-card code" style="display:none;">
+      <pre><code>// Example C++ snippet
+void AMyActor::BeginPlay()
+{
+    Super::BeginPlay();
+    UE_LOG(LogTemp, Warning, TEXT("Hello World"));
+}
+</code></pre>
+    </div>
+
+    <!-- Back link -->
+    <div class="post-card" style="text-align:center;">
+      <a href="../index.html" class="btn ghost">← Back</a>
+    </div>
+
+  </article>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Rag Dev Realm — Built with Unreal Engine 5 &amp; caffeine.</div>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script>
+const images = [
+  "../pics/Skarmbild_2025-09-25_210819.png",
+  "../pics/Skarmbild_2025-09-28_172908.png"
+];
+
+let currentIndex = 0;
+const imgEl = document.getElementById("switcher-img");
+
+function showImage(index) {
+  currentIndex = (index + images.length) % images.length; // wrap around
+  imgEl.src = images[currentIndex];
+}
+
+function nextImage() {
+  showImage(currentIndex + 1);
+}
+
+function prevImage() {
+  showImage(currentIndex - 1);
+}
+</script>
+
+</body>
+</html>

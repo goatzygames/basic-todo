@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Post Title — Rag Dev Realm</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../pics/rdr_logo.png" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html">
+      <div class="logo-round" aria-hidden>
+        <img src="../pics/rdr_logo.png" alt="RDR logo"/>
+      </div>
+      <div class="brand-text">
+        <h1>Rags Dev Realm</h1>
+        <p class="muted">Rag — Indie Game Developer · Unreal Engine 5</p>
+      </div>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<br><br>
+<main class="container" style="padding-top:100px; max-width:800px;">
+  <article class="post">
+
+    <!-- Post Header Card -->
+    <div class="post-card">
+      <h1 style="font-size: 2.5rem;">Post Title Here</h1>
+      <p class="muted">Published on <time datetime="2025-09-21">September 21, 2025</time> · by Rag</p>
+      <div class="post-image">
+        <img src="../pics/post1.jpg" alt="Post cover">
+      </div>
+    </div>
+
+    <!-- Section Card -->
+    <div class="post-card">
+      <h2>Section1</h2>
+      <p>
+        Section1 text content
+      </p>
+    </div>
+	
+	    <!-- Section Card -->
+    <div class="post-card">
+      <h2>Section2</h2>
+      <p>
+        Section2 text content
+      </p>
+    </div>
+	
+
+    <!-- Quote / Highlight -->
+    <div class="post-card highlight">
+      <blockquote>
+        “Scope early and cut mercilessly — the golden rule of indie dev.”
+      </blockquote>
+    </div>
+
+    <!-- Section Card with Image -->
+    <div class="post-card">
+      <h2>Technical Notes</h2>
+      <p>Break your content into sections with headings. This makes long posts easier to read.</p>
+      <img src="../pics/post2.jpg" alt="Gameplay capture">
+    </div>
+
+    <!-- Code Example Card -->
+    <div class="post-card code">
+      <pre><code>// Example C++ snippet
+void AMyActor::BeginPlay()
+{
+    Super::BeginPlay();
+    UE_LOG(LogTemp, Warning, TEXT("Hello World"));
+}
+</code></pre>
+    </div>
+
+    <!-- Back link -->
+    <div class="post-card" style="text-align:center;">
+      <a href="../index.html" class="btn ghost">← Back</a>
+    </div>
+
+  </article>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Rag Dev Realm — Built with Unreal Engine 5 &amp; caffeine.</div>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

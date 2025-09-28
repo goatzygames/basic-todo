@@ -1,193 +1,254 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pro To-Do App — Local</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RagsDevRealm</title>
+  <meta name="title" content="Rags Dev Realm">
+  <meta name="description" content="Rag — Indie Game Developer sharing Unreal Engine 5 projects, devlogs, and insights. Follow the journey of solo game development.">
+
+  <!-- SEO keywords -->
+  <meta name="keywords" content="indie game developer, Unreal Engine 5, C++, game dev blog, solo dev, Rag Dev Realm, Ghostlab Studios, devlogs, portfolio">
+
+  <!-- Author -->
+  <meta name="author" content="Rag (Rag Dev Realm)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ragsdevrealm.com/">
+  <meta property="og:title" content="Rag Dev Realm — Portfolio">
+  <meta property="og:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta property="og:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ragsdevrealm.com/">
+  <meta name="twitter:title" content="Rag Dev Realm — Portfolio">
+  <meta name="twitter:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta name="twitter:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="pics/rdr_logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="pics/rdr_logo.png">
+  <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="pics/rdr_logo.png" />
 </head>
 <body>
-  <div id="app" class="app">
-    <header class="topbar">
-      <div class="brand">✅ Pro To-Do</div>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="logo-round" aria-hidden>
+<img src="pics/rdr_logo.png" alt="RDR logo"/>
+</div>
+<div class="brand-text">
+<h1>Rags Dev Realm</h1>
+<p class="muted">Rag — Indie Game Developer · Unreal Engine 5</p>
+</div>
+</a>
 
-      <div class="controls">
-        <input id="search" type="search" placeholder="Search tasks or tags..." aria-label="Search tasks">
-        <button id="toggleTheme" title="Toggle dark / light">🌙</button>
-      </div>
-    </header>
 
-    <main class="main">
-      <aside class="sidebar" aria-label="Sidebar controls">
-        <section class="create">
-          <h2>Create task</h2>
-          <form id="taskForm" class="task-form" autocomplete="off">
-            <label>
-              Title
-              <input id="title" name="title" required maxlength="200" placeholder="Task title">
-            </label>
+<nav class="main-nav" aria-label="Main navigation">
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+<a href="https://vgen.co/yanesari/portfolio">Yanisari's Art Corner</a>
+</nav>
 
-            <label>
-              Notes
-              <textarea id="notes" name="notes" rows="2" placeholder="Optional details"></textarea>
-            </label>
 
-            <label class="inline">
-              Due
-              <input id="due" name="due" type="datetime-local">
-            </label>
+<button id="nav-toggle" class="nav-toggle" aria-label="Open menu">☰</button>
+</div>
+</header>
 
-            <label class="inline">
-              Priority
-              <select id="priority" name="priority" >
-                <option value="low">Low</option>
-                <option value="medium" selected>Medium</option>
-                <option value="high">High</option>
-              </select>
-            </label>
+<br><br><br><br>
+<main>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner container">
+<div class="hero-badge" aria-hidden>
+<img src="pics/rdr_logo.png" alt="RDR"/>
+</div>
+<div class="hero-copy">
+<h2>Hi, I’m <span class="accent">Rag</span> — gamer turned indie game developer.</h2>
+<p class="lead">I’ve spent the last two years mastering <strong>Unreal Engine</strong>, creating and releasing two indie games. Now, I share my journey — the highs, the lows, and everything in between — as I chase the dream of building worlds of my own.</p>
 
-            <label>
-              Tags (comma separated)
-              <input id="tags" name="tags" placeholder="work,errand,home">
-            </label>
 
-            <label>
-              Recurring
-              <select id="recurring" name="recurring">
-                <option value="">None</option>
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </label>
+<div class="hero-cta">
+<a class="btn primary" href="projects.html">View Projects</a>
+<a class="btn ghost" href="about.html">About Me</a>
+</div>
 
-            <div class="form-actions">
-              <button id="saveTask" type="submit">Add task</button>
-              <button id="clearForm" type="button" class="secondary">Clear</button>
-            </div>
-          </form>
-        </section>
 
-        <section class="filters">
-          <h3>Filters & Views</h3>
+<div class="hero-meta">
+<span>Future Studio: <strong>Ghostlab Studios</strong></span>
+<span>Tools: <strong>Unreal Engine 5 · C++</strong></span>
+</div>
+</div>
 
-          <div class="filter-row">
-            <label><input type="checkbox" id="showCompleted"> Show completed</label>
-            <label><input type="checkbox" id="showArchived"> Show archived</label>
-          </div>
 
-          <div class="filter-row">
-            <button data-view="all" class="view-btn active">All</button>
-            <button data-view="today" class="view-btn">Today</button>
-            <button data-view="overdue" class="view-btn">Overdue</button>
-            <button data-view="due7" class="view-btn">Due <7d</button>
-          </div>
+<div class="hero-card">
+<div class="card-glow"></div>
+<div class="card-inner">
+<h3>Mission</h3>
+<p>This is my open diary of indie game development — honest insights, behind-the-scenes, and the real work behind creating memorable gameplay.</p>
+<a class="btn small" href="about.html">Read mission</a>
+</div>
+</div>
+</div>
 
-          <h4>Sort</h4>
-          <select id="sortBy" aria-label="Sort tasks">
-            <option value="order">Custom order</option>
-            <option value="due">Due date ↑</option>
-            <option value="due_desc">Due date ↓</option>
-            <option value="priority">Priority (high → low)</option>
-            <option value="created">Created (new → old)</option>
-          </select>
 
-          <h4>Bulk actions</h4>
-          <div class="bulk">
-            <button id="selectAll">Select all</button>
-            <button id="clearCompleted">Clear completed</button>
-            <button id="archiveCompleted">Archive completed</button>
-            <button id="deleteSelected" class="danger">Delete selected</button>
-            <button id="undo" title="Undo last change">Undo</button>
-          </div>
 
-          <h4>Data</h4>
-          <div class="data-actions">
-            <button id="exportJson">Export JSON</button>
-            <label class="import-label">
-              Import
-              <input id="importJson" type="file" accept="application/json">
-            </label>
-            <button id="resetAll" class="danger">Reset All</button>
-          </div>
+</section>
 
-          <div class="stats" aria-live="polite">
-            <h4>Stats</h4>
-            <div id="statsContent">Loading…</div>
-          </div>
-        </section>
-      </aside>
 
-      <section class="content" aria-label="Tasks">
-        <header class="list-top">
-          <h2 id="listTitle">Tasks</h2>
-          <div class="list-meta">
-            <span id="countActive">0 active</span> · <span id="countTotal">0 total</span>
-          </div>
-        </header>
+<!-- QUICK BLURB / FEATURES -->
+<section class="features container">
+<div class="feature">
+<h4>Games</h4>
+<p>Two released indie titles made in UE5 with emphasis on atmosphere and polish.</p>
+</div>
+<div class="feature">
+<h4>Development Logs</h4>
+<p>Behind-the-scenes posts, dev notes, and technical breakdowns.</p>
+</div>
+<div class="feature">
+<h4>Tools & Tech</h4>
+<p>C++, Blueprints, level sequencer, audio design, and optimization.</p>
+</div>
+</section>
 
-        <ul id="taskList" class="task-list" role="list" aria-label="Task list">
-          <!-- Tasks rendered here -->
-        </ul>
 
-        <footer class="content-footer">
-          <small>Tip: Use keyboard — Enter to add, / to focus search, Esc to close edit.</small>
-        </footer>
-      </section>
-    </main>
+<!-- LATEST PROJECT PREVIEW -->
+<section class="preview container" style="display:none;">
+<div class="preview-left">
+<h3>Latest release: <span class="accent">The Last Customer</span></h3>
+<p>Atmospheric narrative puzzler built with UE5. Click below to see case study and postmortem.</p>
+<div class="preview-cta">
+<a class="btn" href="project-sample.html">Case Study</a>
+<a class="btn ghost" href="projects.html">All projects</a>
+</div>
+</div>
+<div class="preview-right" aria-hidden>
+<div class="mockup"></div>
+</div>
+</section>
 
-    <!-- Edit modal (inline simple) -->
-    <div id="editModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="modal-content">
-        <button id="closeModal" class="close">✖</button>
-        <h3>Edit task</h3>
-        <form id="editForm" class="task-form" autocomplete="off">
-          <input id="editId" type="hidden">
-          <label>
-            Title
-            <input id="editTitle" required maxlength="200">
-          </label>
-          <label>
-            Notes
-            <textarea id="editNotes" rows="3"></textarea>
-          </label>
-          <label class="inline">
-            Due
-            <input id="editDue" type="datetime-local">
-          </label>
-          <label class="inline">
-            Priority
-            <select id="editPriority">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </select>
-          </label>
-          <label>
-            Tags
-            <input id="editTags" placeholder="comma separated">
-          </label>
-          <label>
-            Recurring
-            <select id="editRecurring">
-              <option value="">None</option>
-              <option value="daily">Daily</option>
-              <option value="weekly">Weekly</option>
-              <option value="monthly">Monthly</option>
-            </select>
-          </label>
-          <div class="form-actions">
-            <button id="saveEdit" type="submit">Save</button>
-            <button id="deleteTask" type="button" class="danger">Delete</button>
-          </div>
-        </form>
-      </div>
-    </div>
+<!-- MISSION / VISION -->
+<section class="mission container">
+<h3>Why this exists</h3>
+<p>This channel is my open diary of indie game development. You’ll find honest insights, behind-the-scenes looks at mechanics, and the real challenges and triumphs of an indie dev. My mission is to entertain, inspire, and grow a community of people who love games as much as I do.</p>
+<p class="muted">The bigger picture: launch <strong>Ghostlab Studios</strong> and keep making meaningful games.</p>
+</section>
 
-    <div id="toast" class="toast" aria-live="polite"></div>
+<!-- LATEST POSTS -->
+<section class="latest-posts container">
+  <header class="section-header" style="text-align:center;margin-bottom:32px;">
+    <h2>Latest Posts</h2>
+    <p class="muted">Catch up on devlogs, updates, and behind-the-scenes stories.</p>
+  </header>
 
+  <div class="card-grid">
+    <!-- Card 1 -->
+    <article class="pro-card">
+      <a href="posts/isolation.html" class="post-link">
+        <div class="pro-thumb">
+          <img src="pics/Skarmbild_2025-09-25_210819.png" alt="Cover for Post One">
+        </div>
+        <div class="pro-body">
+          <h4>Isolation Game Update</h4>
+          <p>Update on my newest project, Isolation (name unset)</p>
+        </div>
+        <div class="pro-footer">
+          <span class="meta">Sep 20, 2025</span>
+          <span class="meta">by Rag</span>
+        </div>
+      </a>
+    </article>
+	
   </div>
 
-  <script src="main.js" defer></script>
+  <div style="margin-top:30px; text-align:center;">
+    <a href="index.html" class="btn ghost"></a>
+  </div>
+</section>
+
+
+<!-- FOUNDER -->
+<section class="founder-section">
+    <h1 style="margin-bottom:16px; color:#e7f0ff; font-size:2rem; text-align: center; padding: 1rem;">The Team</h1>
+  <div class="container founder-inner pro-card">
+
+    <div class="founder-image">
+      <img src="pics/me_pic.jpg" alt="Founder of Rag Dev Realm">
+    </div>
+    <div class="founder-text">
+      <h2>Rag</h2>
+      <p>
+        Founder of Rags Dev Realm. Passionate about indie game development, programming,
+        and creating immersive experiences. Responsible for all programming, design,
+        and storytelling in the studio.
+      </p>
+    </div>
+  </div><br><br>
+    <div class="container founder-inner pro-card">
+
+    <div class="founder-image">
+      <img src="pics/GoatzyGamesPFP_Main.jpg" alt="Goatzy Games">
+    </div>
+    <div class="founder-text">
+      <h2>Goatzy</h2>
+      <p>
+        Soon to be Co-Founder of Ghostlab Studios, Goatzy Games, is really passionate about indie game development, who enjoys challenges that come in the way, like annoying bugs and also new and exciting projects. His own portfolio is at <a href="https://goatzy.games">goatzy.games,</a> where he regularly uploads his latest projects.
+      </p>
+    </div>
+  </div>
+  <br><br>
+<div class="container founder-inner pro-card" style="text-align: left;">
+
+  <div class="founder-image">
+    <img src="pics/att.ZdNR-LPaSMDLdyoZtF_4I7jTD0xbps-K7GskEsgSgIk.png.jpg" alt="Yanisari">
+  </div>
+  <div class="founder-text" style="text-align: left;">
+    <h2 style="text-align: left; margin: 0;">Yanisari</h2>
+    <p style="text-align: left;">
+      A creative artist, passionate writer and digital illustrator of character design.
+    </p>
+    <p style="text-align: left;">
+      Her portfolio is at <a href="https://vgen.co/yanesari/portfolio">vgen.co</a>
+    </p>
+  </div>
+</div>
+
+</section>
+
+<br><br>
+<!-- CALL TO ACTION FOOTER SECTION -->
+<section class="cta container" style="margin-top: 5rem;">
+<h3>Want to follow the journey?</h3>
+<p>Subscribe for updates, devlogs, and early builds.</p>
+<form id="subscribe-form" class="subscribe-form" action="#" onsubmit="return subscribe(event)">
+<input type="email" id="email" placeholder="Your email" required />
+<button class="btn primary">Subscribe</button>
+</form>
+</section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner" style="justify-content: center;">
+    <div>© <span id="year"></span> Rag Dev Realm — Built with Unreal Engine 5 &amp; caffeine.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+<script src="main.js"></script>
 </body>
 </html>

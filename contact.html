@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rags Dev Realm — Contact</title>
+<meta name="title" content="Rags Dev Realm — Contact">
+<meta name="description" content="Get in touch with Rag — Indie Game Developer. Collaborations, commissions, or game dev chats.">
+
+<!-- SEO -->
+<meta name="keywords" content="contact, indie game developer, Unreal Engine 5, solo dev, portfolio, Rag Dev Realm, Ghostlab Studios">
+<meta name="author" content="Rag (Rags Dev Realm)">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a1a1a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ragsdevrealm.com/contact.html">
+<meta property="og:title" content="Contact — Rags Dev Realm">
+<meta property="og:description" content="Collaborations, commissions, or just chatting about game dev — reach out to Rag.">
+<meta property="og:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://ragsdevrealm.com/contact.html">
+<meta name="twitter:title" content="Contact — Rags Dev Realm">
+<meta name="twitter:description" content="Collaborations, commissions, or just chatting about game dev — reach out to Rag.">
+<meta name="twitter:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+<!-- Favicons -->
+<link rel="icon" href="pics/rdr_logo.png" type="image/png">
+<link rel="apple-touch-icon" href="pics/rdr_logo.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<div class="logo-round" aria-hidden>
+<img src="pics/rdr_logo.png" alt="RDR logo"/>
+</div>
+<div class="brand-text">
+<h1>Rags Dev Realm</h1>
+<p class="muted">Rag — Indie Game Developer · Unreal Engine 5</p>
+</div>
+</a>
+
+
+<nav class="main-nav" aria-label="Main navigation">
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+<a href="https://vgen.co/yanesari/portfolio">Yanisari's Art Corner</a>
+</nav>
+
+
+<button id="nav-toggle" class="nav-toggle" aria-label="Open menu">☰</button>
+</div>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="contact-hero" style="text-align:center; padding:5rem 2rem; background:linear-gradient(180deg,#111 0%,#1a1a1a 100%);">
+  <h2 style="font-size:2.5rem; margin-bottom:1rem;">Let’s Build Something Together</h2>
+  <p style="color:#bbb; font-size:1.1rem; max-width:700px; margin:0 auto;">
+    Whether you’re here to collaborate, commission a project, or simply talk game dev, I’d love to hear from you.  
+  </p>
+</section>
+
+<!-- CONTACT FORM -->
+<main class="container contact-page" style="max-width:700px; margin:3rem auto; text-align:center;">
+  <form class="contact-form" action="#" onsubmit="return contactSubmit(event)" style="display:flex; flex-direction:column; gap:1.5rem;">
+    <label style="text-align:left; font-weight:600; color:#ddd;">Name
+      <input type="text" id="c-name" required style="width:100%; padding:0.75rem; background:#222; border:1px solid #444; color:#fff; border-radius:8px;">
+    </label>
+    <label style="text-align:left; font-weight:600; color:#ddd;">Email
+      <input type="email" id="c-email" required style="width:100%; padding:0.75rem; background:#222; border:1px solid #444; color:#fff; border-radius:8px;">
+    </label>
+    <label style="text-align:left; font-weight:600; color:#ddd;">Message
+      <textarea id="c-message" rows="6" required style="width:100%; padding:0.75rem; background:#222; border:1px solid #444; color:#fff; border-radius:8px; resize:vertical;"></textarea>
+    </label>
+    <button class="btn primary" style="padding:1rem; font-size:1.1rem; border-radius:8px; cursor:pointer;">Send Message</button>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner" style="justify-content:center; text-align:center;">
+    <div>© <span id="year"></span> Rag Dev Realm — Built with Unreal Engine 5 &amp; caffeine.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="main.js"></script>
+</body>
+</html>

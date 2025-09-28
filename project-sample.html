@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RagsDevRealm</title>
+  <meta name="title" content="Rags Dev Realm">
+  <meta name="description" content="Rag — Indie Game Developer sharing Unreal Engine 5 projects, devlogs, and insights. Follow the journey of solo game development.">
+
+  <!-- SEO keywords -->
+  <meta name="keywords" content="indie game developer, Unreal Engine 5, C++, game dev blog, solo dev, Rag Dev Realm, Ghostlab Studios, devlogs, portfolio">
+
+  <!-- Author -->
+  <meta name="author" content="Rag (Rag Dev Realm)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1a1a">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ragsdevrealm.com/">
+  <meta property="og:title" content="Rag Dev Realm — Portfolio">
+  <meta property="og:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta property="og:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ragsdevrealm.com/">
+  <meta name="twitter:title" content="Rag Dev Realm — Portfolio">
+  <meta name="twitter:description" content="Indie game developer — Unreal Engine 5 projects, devlogs, and insights.">
+  <meta name="twitter:image" content="https://ragsdevrealm.com/pics/rdr_logo.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="pics/rdr_logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="pics/rdr_logo.png">
+  <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="pics/rdr_logo.png" />
+</head>
+<body>
+<header class="site-header small">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <div class="logo-round"><img src="pics/rdr_logo.png" alt="RDR"/></div>
+      <div class="brand-text">
+        <h1>Rags Dev Realm</h1>
+        <p class="muted">Case Study</p>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<br><br><br><br>
+<main class="container">
+  <!-- Central Project Card -->
+  <div class="project-card hero-card">
+    <!-- Project Header -->
+    <section class="project-header">
+      <h1>The Last Customer</h1>
+      <p class="lead">Short summary of goals, tech, mechanics, and lessons learned.</p>
+    </section>
+
+<section class="project-gallery">
+  <h3>Gallery</h3>
+  <div class="gallery-slider">
+    <!-- Main Image Display -->
+    <div class="gallery-main">
+      <img src="pics/screenshot1.png" alt="Screenshot 1" class="active">
+      <img src="pics/screenshot2.png" alt="Screenshot 2">
+      <img src="pics/screenshot3.png" alt="Screenshot 3">
+      <!-- Add more images here -->
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="gallery-thumbs">
+      <button class="thumb active" data-index="0">
+        <img src="pics/screenshot1.png" alt="Thumb 1">
+      </button>
+      <button class="thumb" data-index="1">
+        <img src="pics/screenshot2.png" alt="Thumb 2">
+      </button>
+      <button class="thumb" data-index="2">
+        <img src="pics/screenshot3.png" alt="Thumb 3">
+      </button>
+      <!-- Add more thumbnails here -->
+    </div>
+  </div>
+</section>
+
+
+    <!-- Video Section -->
+    <section class="project-video">
+      <h3>Gameplay / Trailer</h3>
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="project-overview">
+      <h3>Overview</h3>
+      <p>Built in UE5. Focused on mood, sound design, and slow-burn tension. Solo project from design to release.</p>
+    </section>
+
+    <!-- Technical Notes -->
+    <section class="project-technical">
+      <h3>Technical Notes</h3>
+      <ul>
+        <li>Used level sequencer for cutscenes and environmental storytelling.</li>
+        <li>Optimized lighting with baked GI and selective Lumen features.</li>
+        <li>Custom C++ components for inventory and interaction systems.</li>
+      </ul>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="project-lessons">
+      <h3>Lessons</h3>
+      <ol>
+        <li>Scope early and cut mercilessly.</li>
+        <li>Keep player feedback loops small and consistent.</li>
+        <li>Polish small details — they shape perception.</li>
+      </ol>
+    </section>
+
+    <!-- Extras / Fun Facts -->
+    <section class="project-extras">
+      <h3>Extras / Fun Facts</h3>
+      <p>Any additional info about the project: easter eggs, references, dev anecdotes.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner" style="justify-content: center;">
+    <div>© <span id="year"></span> Rag Dev Realm — Built with Unreal Engine 5 &amp; caffeine.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="main.js"></script>
+</body>
+</html>
